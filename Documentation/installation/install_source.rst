@@ -83,6 +83,7 @@ Python
 * Scipy 1.5.2 or newer - https://pypi.org/project/scipy/
 
   .. note:: This package only needs to be installed manually on Linux
+* Tracktable Data 1.7.0 or newer - https://pypi.org/project/tracktable-data/
 
 .. _cpp_dependencies:
 

@@ -18,12 +18,13 @@ can sensibly assemble sequences of points into trajectories.
 Trajectories lend themselves to being plotted as lines on a map.
 We have provided a sample data set of fictitious trajectories between
 many of the world's busiest airports for you to use. In the examples below,
-``TRACKTABLE_HOME`` refers to the directory where you unpacked/installed Tracktable.
+``TRACKTABLE_DATA`` refers to the tracktable-data directory
+of the Tracktable repository.
 
 .. code-block:: console
 
    $ python -m "tracktable.examples.trajectory_map_from_points" \
-       TRACKTABLE_HOME/examples/data/SampleTrajectories.csv \
+       TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
        TrajectoryMapExample1.png
 
 .. image:: /images/TrajectoryMapExample1.png
@@ -40,7 +41,7 @@ wider and change the color map.
    $ python -m "tracktable.examples.trajectory_map_from_points" \
        --trajectory-linewidth 2 \
        --trajectory-colormap winter \
-       TRACKTABLE_HOME/examples/data/SampleTrajectories.csv \
+       TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
        TrajectoryMapExample2.png
 
 .. image:: /images/TrajectoryMapExample2.png
@@ -61,7 +62,7 @@ population over half a million people.
        --map custom \
        --map-bbox -90 24 -60 50 \
        --draw-cities-larger-than 500000 \
-       TRACKTABLE_HOME/examples/data/SampleTrajectories.csv \
+       TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
        TrajectoryMapExample3.png
 
 .. image:: /images/TrajectoryMapExample3.png
@@ -82,7 +83,7 @@ overwhelmed. Don't forget the backslash (``\``) in front of ``--state-color`` va
        --map custom \
        --map-bbox -90 24 -60 50 \
        --draw-cities-larger-than 500000 \
-       TRACKTABLE_HOME/examples/data/SampleTrajectories.csv \
+       TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
        TrajectoryMapExample4.png
 
 .. image:: /images/TrajectoryMapExample4.png
@@ -113,7 +114,7 @@ unpacked/installed Tracktable.
     $ python -m "tracktable.examples.trajectory_map_from_points" \
          --map-bbox -100 -100 100 100 \
          --domain cartesian2d \
-         TRACKTABLE_HOME/examples/data/SamplePointsCartesian.csv \
+         TRACKTABLE_DATA/python_example_data/SamplePointsCartesian.csv \
 	      trajectory_map_cartesian.png
 
 .. image:: /images/trajectory_map_cartesian.png
