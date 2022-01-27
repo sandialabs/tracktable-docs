@@ -16,7 +16,8 @@ To render a movie, we render short subsets of trajectories over and
 over. As such we can re-use all of the arguments and algorithms we
 already have for rendering trajectory maps with just a few additions
 for movie duration, frames per second, and trajectory length. In the examples below,
-``TRACKTABLE_HOME`` refers to the directory where you unpacked/installed Tracktable.
+``TRACKTABLE_DATA`` refers to the tracktable-data directory
+of the Tracktable repository.
 
 
 Terrestrial Movie
@@ -33,7 +34,7 @@ motion.
         --trajectory-linewidth 2 \
         --fps 10 \
         --duration 10 \
-        TRACKTABLE_HOME/examples/data/SampleTrajectories.csv \
+        TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
         MovieExample1.mp4
 
 This will encode a movie using vanilla MPEG4 that should be playable by
@@ -58,7 +59,7 @@ Second, we will also put a dot at the head of each trajectory with ``--decorate-
       --trajectory-head-dot-size 3 \
       --fps 10 \
       --duration 10 \
-      TRACKTABLE_HOME/examples/data/SampleTrajectories.csv \
+      TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
       MovieExample2.mp4
 
 
@@ -75,7 +76,7 @@ As with geographic data, we can also make movies from data in flat Cartesian spa
       --trajectory-linewidth taper \
       --trajectory-initial-linewidth 4 \
       --trajectory-final-linewidth 1 \
-      TRACKTABLE_HOME/examples/data/SamplePointsCartesian.csv \
+      TRACKTABLE_DATA/python_example_data/SamplePointsCartesian.csv \
       MovieExample3.mp4
 
 .. note:: Recall that trails are colored by their progress
@@ -106,7 +107,7 @@ Cartesian example above.
       --trajectory-linewidth taper \
       --trajectory-initial-linewidth 4 \
       --trajectory-final-linewidth 1 \
-      TRACKTABLE_HOME/examples/data/SamplePointsCartesian.csv \
+      TRACKTABLE_DATA/python_example_data/SamplePointsCartesian.csv \
       MovieExample4.mp4
 
 .. note:: The efficiency of this method is greatly dependent on the

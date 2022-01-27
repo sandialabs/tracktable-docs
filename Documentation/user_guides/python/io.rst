@@ -41,9 +41,10 @@ or TRAJ files into either a list of trajectory points or trajectories.
    :linenos:
 
    from tracktable.rw.load import load_trajectories
+   from tracktable_data.data import retrieve
 
-   file = 'TestData/Points/SampleFlightsUS.csv'
-   # file = 'TestData/Points/tab_separated/SampleFlightsUS.tsv'
+   file = retrieve('SampleFlightsUS.csv')
+   # file = retrieve('SampleFlightsUS.tsv')
 
    # To get the trajectory points set the `return_trajectory_points` flag
    trajectory_points = load_trajectories(file, return_trajectory_points=True)
@@ -52,7 +53,7 @@ or TRAJ files into either a list of trajectory points or trajectories.
    trajectories = load_trajectories(file)
 
 .. note::
-   For posterity the example for creating a CSV/TSV reader by hand has been
+   For posterity, the example for creating a CSV/TSV reader by hand has been
    preserved below for reference.
 
 .. code-block:: python
@@ -195,8 +196,9 @@ a list of trajectory points or trajectories.
    :linenos:
 
    from tracktable.rw.load import load_trajectories
+   from tracktable_data.data import retrieve
 
-   file = 'TestData/Trajectories/NYHarbor_2020_06_30_first_hour.traj'
+   file = retrieve('NYHarbor_2020_06_30_first_hour.traj')
 
    # To get the trajectory points set the `return_trajectory_points` flag
    trajectory_points = load_trajectories(file, return_trajectory_points=True)
@@ -214,8 +216,9 @@ a list of trajectory points or trajectories.
    :linenos:
 
    from tracktable.domain.terrestrial import TrajectoryReader
+   from tracktable_data.data import retrieve
 
-   with open('SampleTrajectories.csv', 'rb') as infile:
+   with open(retrieve('SampleTrajectories.csv'), 'rb') as infile:
        reader = TrajectoryReader()
        reader.input = inFile
 
@@ -241,9 +244,10 @@ a list of trajectory points or trajectories.
    :caption: Trajectories From TRAJ
    :linenos:
 
-   from tracktable.domain.terrestrial import TrajectoryReader
+   from tracktable.domain.terrestrial import TrajectoryPointReader
+   from tracktable_data.data import retrieve
 
-   infile = open('SampleTrajectorie.traj', 'r')
+   infile = open(retrieve('SampleTrajectories.csv'), 'r')
    trajectories = terrestrial.TrajectoryReader()
    trajectories.input = infile
 

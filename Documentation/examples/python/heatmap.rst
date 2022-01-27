@@ -15,14 +15,15 @@ The simplest display type that Tracktable supports is the
 <http://en.wikipedia.org/wiki/Heat_map>`_. It requires points that
 contain longitude/latitude coordinates. The points can contain any
 number of other attributes but they will be ignored. In the examples below,
-``TRACKTABLE_HOME`` refers to the directory where you unpacked/installed Tracktable.
+``TRACKTABLE_DATA`` refers to the tracktable-data directory
+of the Tracktable repository.
 
 Run the example as follows:
 
 .. code-block:: console
 
    $ python -m "tracktable.examples.heatmap_from_points" \
-      TRACKTABLE_HOME/examples/data/SampleHeatmapPoints.csv \
+      TRACKTABLE_DATA/python_example_data/SampleHeatmapPoints.csv \
       HeatmapExample1.png
 
 Open the resulting image (``HeatmapExample1.png``) in your favorite
@@ -41,7 +42,7 @@ the histogram resolution with the ``--histogram-bin-size`` argument.
 
    $ python -m "tracktable.examples.heatmap_from_points" \
       --histogram-bin-size 5 \
-      TRACKTABLE_HOME/examples/data/SampleHeatmapPoints.csv \
+      TRACKTABLE_DATA/python_example_data/SampleHeatmapPoints.csv \
       HeatmapExample2.png
 
 .. image:: /images/HeatmapExample2.png
@@ -56,7 +57,7 @@ linear one you might get more detail.
 
    $ python -m "tracktable.examples.heatmap_from_points" \
       --scale logarithmic \
-      TRACKTABLE_HOME/examples/data/SampleHeatmapPoints.csv \
+      TRACKTABLE_DATA/examples/data/SampleHeatmapPoints.csv \
       HeatmapExample3.png
 
 .. image:: /images/HeatmapExample3.png
@@ -71,7 +72,7 @@ bins smaller?
       --scale logarithmic \
       --map region:europe \
       --histogram-bin-size 0.5 \
-      TRACKTABLE_HOME/examples/data/SampleHeatmapPoints.csv \
+      TRACKTABLE_DATA/python_example_data/SampleHeatmapPoints.csv \
       HeatmapExample4.png
 
 .. image:: /images/HeatmapExample4.png

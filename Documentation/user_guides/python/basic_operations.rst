@@ -171,8 +171,9 @@ Trajectory Assembly Example
    :linenos:
 
    from tracktable.domain.terrestrial import TrajectoryPointReader
+   from tracktable_data.data import retrieve
 
-   with open('SampleFlight.csv', 'rb') as infile:
+   with open(retrieve('SampleFlight.csv'), 'rb') as infile:
        reader = TrajectoryPointReader()
        reader.input = infile
        reader.delimiter = ','
@@ -609,7 +610,7 @@ Tracktable includes data bases of worldwide airports
 and maritime ports which can be used for rendering, data
 generation and analytics. Rendering guides can be found
 on the :ref:`Rendering <user-guide-python-rendering>` page
-and in our :ref:`notebook tutorials <notebook_tutorials>` while data generation guides can be found on
+while data generation guides can be found on
 the :ref:`Data Generation <Python_Data_Generation_Example>` page.
 Both airport and port modules have convient functions for retrieving
 information from their respective databases, these are outlined below.

@@ -2,11 +2,25 @@
 Acquiring Data For Tracktable
 =============================
 
-Internal to Tracktable
-======================
-A handful of sample test data files are provided with the Tracktable library provided that
-Tracktable has been installed from source. These test data files are used for Tracktable's internal
-tests and provide a good representation of the type of data that can be processed by Tracktable.
+"Internal" to Tracktable
+========================
+Sample test data files are provided in the ``tracktable-data`` python package located on PyPi and Conda-Forge.
+These test data files are used for Tracktable's internal tests and provide a good representation of the
+type of data that can be processed by Tracktable. Usage of the ``tracktable-data`` retrevial function
+can be seen below:
+
+.. code-block:: python
+   :caption: Retrieving Sample Data
+   :linenos:
+
+   from tracktable_data.data import retrieve
+   from tracktable.rw.load import load_trajectories
+
+   # Retrieve data by filename
+   filepath = retrieve(filename='SampleFlight.csv')
+
+   # Once we have file path is the file can be loaded
+   trajectories = load_trajectories(filepath)
 
 .. todo:: When the "super-duper example data file" is created update this section with it's location.
 
@@ -43,5 +57,5 @@ Vehicle Traffic
 ---------------
 - `New York City Taxi Data <https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page>`_
 
-.. tip:: Tracktable also includes a random trajectory generator! Take a look at the 
+.. tip:: Tracktable also includes a random trajectory generator! Take a look at the
     Python Data Generation Example.
