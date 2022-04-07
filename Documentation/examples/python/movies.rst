@@ -9,9 +9,6 @@ Making Movies of Trajectories
 .. important:: `Cartopy <https://scitools.org.uk/cartopy/docs/latest/>`_ 0.18.0
    is required to successfully render maps and pass our internal tests.
 
-.. note:: The images generated from the below commands will have a
-   large border around the rendered map; this is expected and correct.
-
 To render a movie, we render short subsets of trajectories over and
 over. As such we can re-use all of the arguments and algorithms we
 already have for rendering trajectory maps with just a few additions
@@ -36,6 +33,8 @@ motion.
         --duration 10 \
         TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
         MovieExample1.mp4
+
+.. todo:: Figure out why our videos won't play in the browser, maybe host gifs instead.
 
 This will encode a movie using vanilla MPEG4 that should be playable by
 anything less than ten years old. `Quicktime Player
@@ -62,6 +61,7 @@ Second, we will also put a dot at the head of each trajectory with ``--decorate-
       TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
       MovieExample2.mp4
 
+.. todo:: Figure out why our videos won't play in the browser, maybe host gifs instead.
 
 Cartesian Movie
 ^^^^^^^^^^^^^^^
@@ -76,8 +76,10 @@ As with geographic data, we can also make movies from data in flat Cartesian spa
       --trajectory-linewidth taper \
       --trajectory-initial-linewidth 4 \
       --trajectory-final-linewidth 1 \
-      TRACKTABLE_DATA/python_example_data/SamplePointsCartesian.csv \
+      TRACKTABLE_DATA/internal_test_data/SamplePointsCartesian.csv \
       MovieExample3.mp4
+
+.. todo:: Figure out why our videos won't play in the browser, maybe host gifs instead.
 
 .. note:: Recall that trails are colored by their progress
    from start to finish and the default colormap ("heat") is black at the
@@ -107,8 +109,10 @@ Cartesian example above.
       --trajectory-linewidth taper \
       --trajectory-initial-linewidth 4 \
       --trajectory-final-linewidth 1 \
-      TRACKTABLE_DATA/python_example_data/SamplePointsCartesian.csv \
+      TRACKTABLE_DATA/internal_test_data/SamplePointsCartesian.csv \
       MovieExample4.mp4
+
+.. todo:: Figure out why our videos won't play in the browser, maybe host gifs instead.
 
 .. note:: The efficiency of this method is greatly dependent on the
    underlying operating system and the complexity of the movie being
