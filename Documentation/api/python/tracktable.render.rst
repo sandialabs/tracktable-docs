@@ -12,6 +12,7 @@ User Accessible Submodules
    tracktable.render.mapmaker.rst
    tracktable.render.render_heatmap.rst
    tracktable.render.render_map.rst
+   tracktable.render.render_movie.rst
    tracktable.render.render_trajectories.rst
 
 ------------------------------
@@ -22,6 +23,7 @@ Non-User Accessible Submodules
 
    tracktable.render.backends.bokeh_backend.rst
    tracktable.render.backends.cartopy_backend.rst
+   tracktable.render.backends.ffmpeg_backend.rst
    tracktable.render.backends.folium_backend.rst
    tracktable.render.backends.ipyleaflet_backend.rst
    tracktable.render.map_decoration.clock.rst
@@ -30,6 +32,8 @@ Non-User Accessible Submodules
    tracktable.render.map_decoration.geographic_decoration.rst
    tracktable.render.map_processing.common_processing.rst
    tracktable.render.map_processing.maps.rst
+   tracktable.render.map_processing.movies.rst
+   tracktable.render.map_processing.parallel_movies.rst
    tracktable.render.map_processing.paths.rst
 
 ---------------
