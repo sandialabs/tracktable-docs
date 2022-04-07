@@ -37,8 +37,10 @@ Third-Party Software
 
 We include databases of cities (from `MaxMind
 <http://www.maxmind.com>`_), time zone boundaries (from `Eric Muller <http://efele.net/maps/tz/world/>`_),
-airports (from `Arash Partow <http://www.partow.net/miscellaneous/airportdatabase>`_)
-and ports (from `National Geospatial-Intelligence Agency <https://msi.nga.mil/Publications/WPI>`_) in tracktable.
+airports (from `Arash Partow <http://www.partow.net/miscellaneous/airportdatabase>`_),
+ports (from `National Geospatial-Intelligence Agency <https://msi.nga.mil/Publications/WPI>`_) and
+coastlines, lakes, rivers and borders (from `Global Self-consistent Hierarchical High-resolution Geography <https://www.soest.hawaii.edu/pwessel/gshhg/>`_)
+in tracktable.
 
 Their licenses are reproduced in full in the file ``LICENSE.html`` in
 the root directory of the tracktable distribution. In this section we

@@ -10,8 +10,11 @@ Submodules
    :maxdepth: 2
 
    tracktable.info.airports.rst
+   tracktable.info.borders.rst
    tracktable.info.cities.rst
    tracktable.info.ports.rst
+   tracktable.info.rivers.rst
+   tracktable.info.shorelines.rst
    tracktable.info.timezones.rst
 
 ---------------

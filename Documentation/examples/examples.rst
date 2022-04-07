@@ -70,6 +70,7 @@ Tutorials
       tut5C [label="Tutorial 5C: Heatmap Trajectory Visualization"];
       tut5D [label="Tutorial 5D: Trajectory Visualization For Print"];
       tut5E [label="Tutorial 5E: Airport & Port Visualization"];
+      tut5F [label="Tutorial 5F: Shoreline, River & Border Visualization"];
       tut6 [label="Tutorial 6: Filtering"];
 
       tut1 -> tut2;
@@ -81,6 +82,7 @@ Tutorials
       viz -> tut5C;
       viz -> tut5D;
       viz -> tut5E;
+      viz -> tut5F;
       tut2 -> tut6;
    }
 
@@ -96,6 +98,7 @@ Tutorials
    Tutorial_05C
    Tutorial_05D
    Tutorial_05E
+   Tutorial_05F
    Tutorial_06
 
 .. _analytic_demos:
