@@ -26,7 +26,7 @@ motion.
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.movie_from_points" \
+   $ python -m "tracktable.examples.python_scripts.movie_from_points" \
         --trail-duration 3600 \
         --trajectory-linewidth 2 \
         --fps 10 \
@@ -49,7 +49,7 @@ Second, we will also put a dot at the head of each trajectory with ``--decorate-
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.movie_from_points" \
+   $ python -m "tracktable.examples.python_scripts.movie_from_points" \
       --trail-duration 3600 \
       --trajectory-linewidth taper \
       --trajectory-initial-linewidth 3 \
@@ -70,7 +70,7 @@ As with geographic data, we can also make movies from data in flat Cartesian spa
 
 .. code-block:: console
 
-    $ python -m "tracktable.examples.movie_from_points" \
+    $ python -m "tracktable.examples.python_scripts.movie_from_points" \
       --domain cartesian2d \
       --map-bbox -100 -100 100 100 \
       --trajectory-linewidth taper \
@@ -97,7 +97,7 @@ Cartesian example above.
 
 .. code-block:: console
 
-    $ python -m "tracktable.examples.parallel_movie_from_points" \
+    $ python -m "tracktable.examples.python_scripts.parallel_movie_from_points" \
       --processors 8 \
       --domain cartesian2d \
       --object-id-column 0 \

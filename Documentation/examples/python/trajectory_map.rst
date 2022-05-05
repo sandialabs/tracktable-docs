@@ -23,7 +23,7 @@ of the Tracktable repository.
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.trajectory_map_from_points" \
+   $ python -m "tracktable.examples.python_scripts.trajectory_map_from_points" \
        TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
        TrajectoryMapExample1.png
 
@@ -38,7 +38,7 @@ wider and change the color map.
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.trajectory_map_from_points" \
+   $ python -m "tracktable.examples.python_scripts.trajectory_map_from_points" \
        --trajectory-linewidth 2 \
        --trajectory-colormap winter \
        TRACKTABLE_DATA/python_example_data/SampleTrajectories.csv \
@@ -56,7 +56,7 @@ population over half a million people.
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.trajectory_map_from_points" \
+   $ python -m "tracktable.examples.python_scripts.trajectory_map_from_points" \
        --trajectory-linewidth 2 \
        --trajectory-colormap winter \
        --map custom \
@@ -75,7 +75,7 @@ overwhelmed. Don't forget the backslash (``\``) in front of ``--state-color`` va
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.trajectory_map_from_points" \
+   $ python -m "tracktable.examples.python_scripts.trajectory_map_from_points" \
        --state-color \#80FF80 \
        --state-linewidth 2 \
        --trajectory-linewidth 1 \
@@ -111,7 +111,7 @@ unpacked/installed Tracktable.
 
 .. code-block:: console
 
-    $ python -m "tracktable.examples.trajectory_map_from_points" \
+    $ python -m "tracktable.examples.python_scripts.trajectory_map_from_points" \
          --map-bbox -100 -100 100 100 \
          --domain cartesian2d \
          TRACKTABLE_DATA/python_example_data/SamplePointsCartesian.csv \
