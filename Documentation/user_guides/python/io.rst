@@ -43,14 +43,17 @@ or TRAJ files into either a list of trajectory points or trajectories.
    from tracktable.rw.load import load_trajectories
    from tracktable_data.data import retrieve
 
-   file = retrieve('SampleFlightsUS.csv')
+   filename = retrieve('SampleFlightsUS.csv')
    # file = retrieve('SampleFlightsUS.tsv')
 
    # To get the trajectory points set the `return_trajectory_points` flag
-   trajectory_points = load_trajectories(file, return_trajectory_points=True)
+   trajectory_points = load_trajectories(filename, return_trajectory_points=True)
 
-   # To get just the trajectories just pass the file
-   trajectories = load_trajectories(file)
+   # To get the underlying generator unset the `return_list` flag
+   trajectory_points = load_trajectories(filename, return_list=False)
+
+   # To get the assembled trajectories just pass the file
+   trajectories = load_trajectories(filename)
 
 .. note::
    For posterity, the example for creating a CSV/TSV reader by hand has been
@@ -61,7 +64,7 @@ or TRAJ files into either a list of trajectory points or trajectories.
 
    from tracktable.domain.terrestrial import TrajectoryPointReader
 
-   with open('point_data.csv', 'rb') as infile:
+   with open(retrieve('SampleFlightsUS.csv'), 'rb') as infile:
        reader = TrajectoryPointReader()
        reader.input = infile
        reader.delimiter = ','
@@ -198,13 +201,13 @@ a list of trajectory points or trajectories.
    from tracktable.rw.load import load_trajectories
    from tracktable_data.data import retrieve
 
-   file = retrieve('NYHarbor_2020_06_30_first_hour.traj')
+   filename = retrieve('NYHarbor_2020_06_30_first_hour.traj')
 
    # To get the trajectory points set the `return_trajectory_points` flag
-   trajectory_points = load_trajectories(file, return_trajectory_points=True)
+   trajectory_points = load_trajectories(filename, return_trajectory_points=True)
 
    # To get just the trajectories just pass the file
-   trajectories = load_trajectories(file)
+   trajectories = load_trajectories(filename)
 
 .. note::
    For posterity the examples for creating TRAJ reader by hand have been
@@ -218,7 +221,7 @@ a list of trajectory points or trajectories.
    from tracktable.domain.terrestrial import TrajectoryReader
    from tracktable_data.data import retrieve
 
-   with open(retrieve('SampleTrajectories.csv'), 'rb') as infile:
+   with open(retrieve('NYHarbor_2020_06_30_first_hour.traj'), 'rb') as infile:
        reader = TrajectoryReader()
        reader.input = inFile
 
