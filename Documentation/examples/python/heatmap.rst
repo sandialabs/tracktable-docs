@@ -22,7 +22,7 @@ Run the example as follows:
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.heatmap_from_points" \
+   $ python -m "tracktable.examples.python_scripts.heatmap_from_points" \
       TRACKTABLE_DATA/python_example_data/SampleHeatmapPoints.csv \
       HeatmapExample1.png
 
@@ -40,7 +40,7 @@ the histogram resolution with the ``--histogram-bin-size`` argument.
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.heatmap_from_points" \
+   $ python -m "tracktable.examples.python_scripts.heatmap_from_points" \
       --histogram-bin-size 5 \
       TRACKTABLE_DATA/python_example_data/SampleHeatmapPoints.csv \
       HeatmapExample2.png
@@ -55,7 +55,7 @@ linear one you might get more detail.
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.heatmap_from_points" \
+   $ python -m "tracktable.examples.python_scripts.heatmap_from_points" \
       --scale logarithmic \
       TRACKTABLE_DATA/examples/data/SampleHeatmapPoints.csv \
       HeatmapExample3.png
@@ -68,7 +68,7 @@ bins smaller?
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.heatmap_from_points" \
+   $ python -m "tracktable.examples.python_scripts.heatmap_from_points" \
       --scale logarithmic \
       --map region:europe \
       --histogram-bin-size 0.5 \
@@ -85,4 +85,4 @@ options with the ``--help`` argument.
 
 .. code-block:: console
 
-   $ python -m "tracktable.examples.heatmap_from_points" --help
+   $ python -m "tracktable.examples.python_scripts.heatmap_from_points" --help
