@@ -12,7 +12,7 @@ generating heatmap points are based on placing points around a given set of
 largest cities.
 
 ------------------------------------
-Generate Airport-based Trajectories
+Generate Airport-Based Trajectories
 ------------------------------------
 
 Tracktable includes data on many airports around the world. This data includes
@@ -25,8 +25,8 @@ the whole world or in a specific locality.
 Important constraints for generating trajectories include speed, time between points,
 and the minimum number of points that make up the trajectory.
 
-Generate Single Trajectory Between Airports
--------------------------------------------
+Generate A Single Trajectory Between Airports
+---------------------------------------------
 
 This example shows how to retrieve airport data using airport codes and create a single trajectory.
 
@@ -34,12 +34,12 @@ This example shows how to retrieve airport data using airport codes and create a
    :linenos:
 
    from datetime import datetime
-   from tracktable.examples.data.generators import generate_trajectories
+   from tracktable.data_generators import trajectory
    from tracktable.info import airports
 
    ABQ_AIRPORT = airports.airport_information("ABQ")
    DEN_AIRPORT = airports.airport_information("DEN")
-   new_trajectory = generate_trajectories.generate_airport_trajectory(
+   new_trajectory = trajectory.generate_airport_trajectory(
                                              start_airport=ABQ_AIRPORT,
                                              end_airport=DEN_AIRPORT,
                                              start_time=datetime.now(),
@@ -53,7 +53,7 @@ Generate Multiple Trajectories Between Lists Of Airports
 --------------------------------------------------------
 
 This example shows how to retrieve a set of the ten largest airports and use it as input
-to the ``tracktable.examples.data.generators.generate_trajectories`` package.
+to the ``tracktable.data_generators.trajectory`` package.
 Alternatively, the ``tracktable.info.airports`` package could be used directly to get airports based
 on other criteria. The result will be a list of airports that start and end at
 random airports sampled from the given list.
@@ -61,10 +61,10 @@ random airports sampled from the given list.
 .. code-block:: python
    :linenos:
 
-   from tracktable.examples.data.generators import generate_trajectories
+   from tracktable.data_generators import trajectory
 
-   ten_largest_airports = generate_trajectories.n_largest_airports(10)
-   new_trajectories = generate_trajectories.generate_random_airport_trajectories(
+   ten_largest_airports = trajectory.n_largest_airports(10)
+   new_trajectories = trajectory.generate_random_airport_trajectories(
                                           start_airport_list=ten_largest_airports[:5],
                                           end_airport_list=ten_largest_airports[5:],
                                           num_paths=5,
@@ -82,9 +82,9 @@ points.
 .. code-block:: python
    :linenos:
 
-   from tracktable.examples.data.generators import generate_trajectories
+   from tracktable.data_generators import trajectory
 
-   new_trajectories = generate_trajectories.generate_random_airport_trajectories(
+   new_trajectories = trajectory.generate_random_airport_trajectories(
                                       start_airport_list=None,
                                       end_airport_list=[],
                                       num_paths=5,
@@ -109,7 +109,7 @@ generate a list of 5 new trajectories.
    :linenos:
 
     from datetime import datetime
-    from tracktable.examples.data.generators import generate_trajectories
+    from tracktable.data_generators import trajectory
     from tracktable.domain.terrestrial import TrajectoryPoint as TerrestrialTrajectoryPoint
 
     bbox_type = TerrestrialTrajectoryPoint.domain_classes['BoundingBox']
@@ -136,7 +136,7 @@ generate a list of 5 new trajectories.
     starting_bbox = bbox_type(starting_min_corner, starting_max_corner)
     ending_bbox = bbox_type(ending_min_corner, ending_max_corner)
 
-    new_trajectories = generate_trajectories.generate_bbox_trajectories(
+    new_trajectories = trajectory.generate_bbox_trajectories(
                                                     starting_bbox,
                                                     ending_bbox,
                                                     5,
@@ -147,15 +147,13 @@ generate a list of 5 new trajectories.
                                                     minimum_num_points=10)
 
 --------------------------------
-Generate Port-based Trajectories
+Generate Port-Based Trajectories
 --------------------------------
-
-TBD
 
 .. todo:: Create this section once Tracktable is able to intelligently generate trajectories between ports
 
 ----------------------------------
-Generate City-based Heatmap Points
+Generate City-Based Heatmap Points
 ----------------------------------
 
 Tracktable includes data on many large cities around the world. This data includes
@@ -177,9 +175,9 @@ This example shows how to generate heatmap points around 10 of the largest citie
 .. code-block:: python
    :linenos:
 
-   from tracktable.examples.data.generators import generate_heatmap_points
+   from tracktable.data_generators import heatmap_point
 
-   heatmap = generate_heatmap_points.generate_heatmap_points(
+   heatmap = heatmap_point.generate_heatmap_points(
                                              num_cities=10,
                                              num_points_per_city=30,
                                              write_file=False,

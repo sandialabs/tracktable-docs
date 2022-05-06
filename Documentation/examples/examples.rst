@@ -39,7 +39,6 @@ Python Examples
 .. toctree::
    :maxdepth: 2
 
-   /examples/python/data_generation.rst
    /examples/python/heatmap.rst
    /examples/python/trajectory_map.rst
    /examples/python/movies.rst
