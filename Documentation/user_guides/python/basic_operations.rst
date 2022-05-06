@@ -166,6 +166,31 @@ the point sequence:
 Trajectory Assembly Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note::
+   As of Tracktable 1.7, there is a generalized trajectory loader
+   that will automatically load CSV, TSV or TRAJ files and, if desired,
+   automatically assemble the points into trajectories.
+
+.. code-block:: python
+   :caption: General Trajectory Assembly
+   :linenos:
+
+   from tracktable_data.data import retrieve
+   from tracktable.rw.load import load_trajectories
+
+    trajectories = load_trajectories(retrieve('SampleFlight.csv'),
+                        real_fields={"altitude":4},
+                        separation_time=30,
+                        separation_distance=100,
+                        minimum_length=10
+                        )
+
+    # process the trajectories here
+
+.. note::
+   For posterity, the example for creating a reader and assembler
+   by hand has been preserved below for reference.
+
 .. code-block:: python
    :caption: Trajectory Assembly
    :linenos:
@@ -198,7 +223,8 @@ Trajectory Assembly Example
        trajectory_assembler.minimum_length = 10
 
        trajectories = list(trajectory_assembler)
-       # process trajectories here or add to a list
+
+       # process the trajectories here
 
 
 
@@ -337,6 +363,32 @@ Distance Geometry Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
+   :caption: Distance Geometry by Distance and Time
+   :linenos:
+
+   from tracktable.algorithms.distance_geometry import distance_geometry_by_distance
+   from tracktable.algorithms.distance_geometry import distance_geometry_by_time
+   from tracktable_data.data import retrieve
+   from tracktable.rw.load import load_trajectories
+
+    trajectories = load_trajectories(retrieve('SampleFlightsUS.csv'),
+                        real_fields={"altitude":4},
+                        separation_time=30,
+                        separation_distance=100,
+                        minimum_length=10
+                        )
+
+    for trajectory in trajectories:
+        distance_geometry_length_values = distance_geometry_by_distance(trajectories, 4)
+        distance_geometry_time_values = distance_geometry_by_time(trajectories, 4)
+
+        # Process or store distance geometry values
+
+.. note::
+   For posterity, the example for creating a reader and assembler
+   by hand has been preserved below for reference.
+
+.. code-block:: python
     :caption: Distance Geometry by Distance and Time
     :linenos:
 
@@ -344,7 +396,7 @@ Distance Geometry Example
     from tracktable.algorithms.distance_geometry import distance_geometry_by_time
     from tracktable.domain.terrestrial import TrajectoryPointReader
 
-    with open('point_data.csv', 'rb') as infile:
+    with open(retrieve('SampleFlightsUS.csv')) as infile:
         reader = TrajectoryPointReader()
         reader.input = infile
         reader.delimiter = ','
@@ -371,13 +423,7 @@ Distance Geometry Example
         distance_geometry_length_values = distance_geometry_by_distance(trajectory_assembler.trajectories(), 4)
         distance_geometry_time_values = distance_geometry_by_time(trajectory_assembler.trajectories(), 4)
 
-
-.. note::
-   Refer to "Clustering with Distance Geometry" example
-   Mention what we could do with these distance geometry values after computing them
-
-
-
+        # Process or store distance geometry values
 
 Analyzing Trajectories Using Feature Vectors
 ============================================
