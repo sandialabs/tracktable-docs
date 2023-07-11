@@ -14,14 +14,20 @@ The ``tracktable`` namespace has most of the
 operations we want to perform on two or more points. Here are a few
 common ones, a comprehensive list of operations can be found in
 the :ref:`tracktable core detail reference documentation <cpp-api-core>`.
-These operations work with both ``base_point_type`` and ``trajectory_point_type``
-points unless otherwise noted.
+Arguments of type ``Geometry`` can be ``base_point_type``, 
+``trajectory_point_type``, ``trajectory_type``, or ``linestring_type``.  
+Arguments of type Point can be ``base_point_type`` or ``trajectory_point_type``.
+The data types of different arguments can be different (for example, 
+computing the distance between a point and a trajectory, or a trajectory
+and a linestring), but all arguments must come from the same point domain 
+(terrestrial, 2D Cartesian, or 3D Cartesian).
 
-* ``distance(Geometry1 const& from, Geometry2 const& to)``: Compute distance between from and to
-* ``bearing(T const& from, T const& to)``: Compute the bearing from the origin to the destination
-* ``speed_between(T const& start, T const& finish)``: Compute speed between two trajectory points
-* ``signed_turn_angle(T const& a, T const& b, T const& c)``: Angle between vectors AB and BC
-* ``unsigned_turn_angle(T const& a, T const& b, T const& c)``: Absolute value of angle between vectors AB and BC
+
+* ``distance(Geometry const& from, Geometry const& to)``: Compute distance between ``from`` and ``to``
+* ``bearing(Point const& from, Point const& to)``: Compute the bearing from the origin to the destination
+* ``speed_between(Point const& start, Point const& finish)``: Compute speed between two trajectory points
+* ``signed_turn_angle(Point const& a, Point const& b, Point const& c)``: Angle between vectors AB and BC
+* ``unsigned_turn_angle(Point const& a, Point const& b, Point const& c)``: Absolute value of angle between vectors AB and BC
 
 .. _user-guide-cpp-analysis:
 
