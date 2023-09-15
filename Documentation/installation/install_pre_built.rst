@@ -15,7 +15,10 @@ Pip
 
 As of Version 1.2, Tracktable is available on the Python Package Index
 (PyPI, https://pypi.org) and can be installed with ``pip`` as long as
-you're running Python 3.5 to Python 3.9. Use the following command:
+you're running Python 3.5 or newer.  (Note: Each new release is generally
+limited to those versions of Python that are supported at release time.
+Tracktable 1.7, for example, supports Python 3.9 - 3.11.)
+Use the following command to install from Pip:
 
 .. code-block:: console
 
@@ -38,7 +41,7 @@ Tracktable. Enter the following commands in a command/terminal/Anaconda prompt.
    * **Creating a virtual environment from an conda environment.yml file**
 
      We include a YML configuration file
-     (:download:`tracktable_environment.yml <../../../tracktable_environment.yml>`)
+     (:download:`tracktable_environment.yml <../../../tracktable_runtime_environment.yml>`)
      that can be used to create an Anaconda virtual environment named
      ``tracktable``. This file will create the environment in one shot and doesn't
      require any additional package installation after the environment is activated.
