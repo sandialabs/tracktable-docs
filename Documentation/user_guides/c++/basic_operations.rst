@@ -243,12 +243,12 @@ The D-level distance geometry for a curve will result in ``(D * (D+1)) / 2``  se
 
     std::vector<double> terrestrial_dg = tracktable::distance_geometry_by_time(trajectory, 4);
 
-.. _cpp-great-fit-circle:
+.. _cpp-great-circle-fit:
 
-Great Fit Circle
+Great Circle Fit
 ----------------
 
-The Great Fit Circle module is responsible for generating the great circle
+The Great Circle Fit module is responsible for generating the great circle
 that best fits each given trajectory or set of points with the option to
 project the circle onto a specified plane. The functions in this module
 provide options for generating and projecting great circles.
