@@ -25,6 +25,7 @@ Non-User Accessible Submodules
    tracktable.render.backends.cartopy_backend.rst
    tracktable.render.backends.ffmpeg_backend.rst
    tracktable.render.backends.folium_backend.rst
+   tracktable.render.backends.folium_proxy.rst
    tracktable.render.backends.ipyleaflet_backend.rst
    tracktable.render.map_decoration.clock.rst
    tracktable.render.map_decoration.coloring.rst
