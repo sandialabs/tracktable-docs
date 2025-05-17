@@ -8,7 +8,7 @@ Most institutions that deal with this on a regular basis have built their own ve
 
 Here's how we use it:
 
-.. codeblock:: python
+.. code-block:: python
 
     # Instead of this...
     import folium
@@ -23,6 +23,8 @@ Here's how we use it:
     # Do this.
     from tracktable.render.backends import folium_proxy
     heat_map = folium_proxy.import_folium("plugins.heat_map")
+
+::
 
 By default, the ``import_folium`` method will first try to import the package ``offlinefolium``.  If it can't find that package, it will fall back to regular Folium.
 
