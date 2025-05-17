@@ -24,3 +24,6 @@ myfig*.*
 my_trajectories.traj
 my_favorite_trajectories.html
 analytic_demo_notebooks/*.traj
+Documentation/readthedocs/doxygen/doxyxml/
+Documentation/readthedocs/doxygen/latex/
+
