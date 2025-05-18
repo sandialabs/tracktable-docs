@@ -91,7 +91,6 @@ Tutorials
    Sphinx_Test
    Tutorial_01
    Tutorial_02
- ..
    Tutorial_03
    Tutorial_04
    Tutorial_05A
@@ -110,7 +109,6 @@ Analytic Demos
 .. toctree::
    :maxdepth: 1
 
-..
    Demo_01
    Demo_02
    Demo_03
