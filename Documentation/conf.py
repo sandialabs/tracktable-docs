@@ -25,6 +25,7 @@
 import subprocess
 import sys
 import os
+import pathlib
 import re
 
 # Due to Sphinx parsing restrictions the python wrapped modules
@@ -34,6 +35,8 @@ import tracktable.lib
 tracktable_src = '../../'
 tracktable_version = re.search(r"^TRACKTABLE VERSION ([0-9\.]*)", open(os.path.join(os.path.dirname(__file__), "..", "..", "version.txt"), "rt").read(), re.M).group(1)
 
+print(f"--- Detected Tracktable version {tracktable_version}")
+print(f"--- Builder is running in ")
 # We have to run these manually on readthedocs since we aren't
 # driving the build with CMake.
 env_copy = os.environ.copy()
@@ -154,7 +157,7 @@ pygments_style = 'sphinx'
 # ----- Options for nbsphinx -----
 
 nbsphinx_allow_errors = False # If True, the build process is continued even if an exception occurs.
-nbsphinx_execute = 'never' # Whether to execute notebooks before conversion or not. Possible values: 'always', 'never', 'auto' (default).
+nbsphinx_execute = 'auto' # Whether to execute notebooks before conversion or not. Possible values: 'always', 'never', 'auto' (default).
 nbsphinx_timeout = -1 # Controls when a cell will time out. The timeout is given in seconds. Given -1, cells will never time out.
 nbsphinx_execute_arguments = [ # Kernel arguments used when executing notebooks.
     "--InlineBackend.figure_formats={'svg', 'pdf'}",
