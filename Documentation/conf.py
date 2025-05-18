@@ -91,7 +91,7 @@ todo_include_todos = True
 #templates_path = [ os.path.join(tracktable_src, 'doc', '_templates') ]
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = ['.rst']
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
