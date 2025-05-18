@@ -88,6 +88,7 @@ Tutorials
 .. toctree::
    :maxdepth: 1
 
+   Sphinx_Test
    Tutorial_01
    Tutorial_02
    Tutorial_03
