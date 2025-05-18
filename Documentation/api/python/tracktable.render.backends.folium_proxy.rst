@@ -24,8 +24,6 @@ Here's how we use it:
     from tracktable.render.backends import folium_proxy
     heat_map = folium_proxy.import_folium("plugins.heat_map")
 
-::
-
 By default, the ``import_folium`` method will first try to import the package ``offlinefolium``.  If it can't find that package, it will fall back to regular Folium.
 
 You can change the name of the package that ``import_folium`` looks for by calling ``set_folium_proxy_name(new_module_name)``, documented below.  You can disable the proxy mechanism entirely with ``set_folium_proxy_enabled(onoff)``.
