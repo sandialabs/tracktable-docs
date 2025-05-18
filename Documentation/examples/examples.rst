@@ -89,32 +89,13 @@ Tutorials
    :maxdepth: 1
 
    Sphinx_Test
-   Tutorial_01
-   Tutorial_02
-   Tutorial_03
-   Tutorial_04
-   Tutorial_05A
-   Tutorial_05B
-   Tutorial_05C
-   Tutorial_05D
-   Tutorial_05E
-   Tutorial_05F
-   Tutorial_06
 
 .. _analytic_demos:
 
 Analytic Demos
 **************
 
-.. toctree::
-   :maxdepth: 1
-
-   Demo_01
-   Demo_02
-   Demo_03
-   Demo_04
-   Demo_05
-
+Foo!
 
 If you wish to modify or run the notebooks locally there are three ways to get them:
 
