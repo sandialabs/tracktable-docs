@@ -36,7 +36,14 @@ tracktable_src = '../../'
 tracktable_version = re.search(r"^TRACKTABLE VERSION ([0-9\.]*)", open(os.path.join(os.path.dirname(__file__), "..", "..", "version.txt"), "rt").read(), re.M).group(1)
 
 print(f"--- Detected Tracktable version {tracktable_version}")
-print(f"--- Builder is running in ")
+print(f"--- Builder is running in {os.getcwd()}")
+
+import nbsphinx
+import nbsphinx_link
+
+print(f"--- nbsphinx version: {nbsphinx.__version__}")
+print(f"--- nbsphinx_link version: {nbsphinx_link.__version__}")
+
 # We have to run these manually on readthedocs since we aren't
 # driving the build with CMake.
 env_copy = os.environ.copy()
