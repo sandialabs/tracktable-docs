@@ -20,23 +20,24 @@ import os
 import os.path
 import re
 
-tracktable_src = '../../../src/Python'
-
-version_txt_location = os.path.normpath(os.path.join(
-    tracktable_src, "..", "..", "..", "..", "version.txt"
+here = os.path.abspath(__file__)
+tracktable_root = os.path.normpath(os.path.join(
+       here, "..", "..", "..", ".."
 ))
+tracktable_src = os.path.join(tracktable_root, "src", "Python")
 
-if not os.path.exists(os.path.join(tracktable_src, "..", "..", "version.txt")):
-    where_we_looked = os.path.abspath(os.path.normpath(version_txt_location))
+if not os.path.exists(os.path.join(tracktable_root, "version.txt")):
     raise FileNotFoundError((
         f"Documentation/conf.py: tracktable_src is probably wrong.  Couldn't find "
-        f"version.txt in {where_we_looked}.  We set tracktable_src to "
-        f"{tracktable_src} (absolutely: {os.path.abspath(os.path.normpath(tracktable_src))})."
+        f"version.txt in {tracktable_root}.  We set tracktable_root to "
+        f"{tracktable_root} (absolutely: {os.path.abspath(os.path.normpath(tracktable_root))})."
     ))
 
 
 tracktable_build = None
-tracktable_version = re.search(r"^TRACKTABLE VERSION ([0-9\.]*)", open(os.path.join(os.path.dirname(__file__), "..", "..","..", "version.txt"), "rt").read(), re.M).group(1)
+with open(os.path.join(tracktable_root, "version.txt"), "r") as version_txt:
+    search_result = re.search(r"^TRACKTABLE VERSION ([0-9\.]*)", version_txt.read())
+    tracktable_version = search_result.group(0)
 
 debugging = False
 
@@ -51,14 +52,21 @@ else:
     # the build directory instead of the source directory. These
     # variables are set by CMake when executing the Sphinx build
     # command (see the `doc_python` target in /tracktable/CMakeLists.txt).
-    tracktable_src = os.environ['SOURCE_DIR']
     tracktable_build = os.environ['BINARY_DIR']
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-sys.path.insert(0, os.path.abspath(os.path.join(tracktable_src, 'tracktable', 'Python')))
+sys.path.insert(0, tracktable_src)
+
+try:
+    import tracktable
+except ImportError as e:
+    import pprint
+    print("ERROR trying to import Tracktable: {}".format(e))
+    print("Search path:")
+    pprint.pprint(sys.path)
 
 # The autodoc Sphinx extension doesn't need to care about our Python
 # extension modules.  This list contains symbols that it should
@@ -233,7 +241,7 @@ html_theme = 'sphinx_rtd_theme'
 if debugging:
     html_static_path = ['css']
 else:
-    html_static_path = [os.path.join(tracktable_src, 'tracktable-docs', 'Documentation', 'css')]
+    html_static_path = [os.path.join(tracktable_root, 'tracktable-docs', 'Documentation', 'css')]
 html_style = "tracktable.css"
 
 # Add any extra paths that contain custom files (such as robots.txt or
