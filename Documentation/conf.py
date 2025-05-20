@@ -25,14 +25,31 @@
 import subprocess
 import sys
 import os
+import os.path
 import re
 
 # Due to Sphinx parsing restrictions the python wrapped modules
 # need to be imported before we start building the documentation
 import tracktable.lib
 
-tracktable_src = '../../'
-tracktable_version = re.search(r"^TRACKTABLE VERSION ([0-9\.]*)", open(os.path.join(os.path.dirname(__file__), "..", "..", "version.txt"), "rt").read(), re.M).group(1)
+
+here = os.path.abspath(__file__)
+tracktable_root = os.path.normpath(os.path.join(
+       here, "..", "..", ".."
+))
+tracktable_src = os.path.join(tracktable_root, "src", "Python")
+
+if not os.path.exists(os.path.join(tracktable_root, "version.txt")):
+    raise FileNotFoundError((
+        f"Documentation/conf.py: tracktable_src is probably wrong.  Couldn't find "
+        f"version.txt in {tracktable_root}.  We set tracktable_root to "
+        f"{tracktable_root} (absolutely: {os.path.abspath(os.path.normpath(tracktable_root))})."
+    ))
+
+tracktable_build = None
+with open(os.path.join(tracktable_root, "version.txt"), "r") as version_txt:
+    search_result = re.search(r"^TRACKTABLE VERSION ([0-9\.]*)", version_txt.read())
+    tracktable_version = search_result.group(0)
 
 # We have to run these manually on readthedocs since we aren't
 # driving the build with CMake.
