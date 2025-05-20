@@ -7,7 +7,7 @@ Cluster Example Source Files
 Main.cpp
 --------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Cluster/Main.cpp
+.. literalinclude:: ../../../../../src/Examples/Cluster/Main.cpp
 	:language: cpp
 	:linenos:
 
@@ -16,6 +16,6 @@ Main.cpp
 Correlation.h
 --------------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Cluster/Correlation.h
+.. literalinclude:: ../../../../../src/Examples/Cluster/Correlation.h
 	:language: cpp
 	:linenos:

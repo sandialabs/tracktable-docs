@@ -7,7 +7,7 @@ Predict Example Source Files
 Main.cpp
 --------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Predict/Main.cpp
+.. literalinclude:: ../../../../../src/Examples/Predict/Main.cpp
 	:language: cpp
 	:linenos:
 
@@ -16,7 +16,7 @@ Main.cpp
 Predict.h
 ---------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Predict/Predict.h
+.. literalinclude:: ../../../../../src/Examples/Predict/Predict.h
 	:language: cpp
 	:linenos:
 
@@ -25,7 +25,7 @@ Predict.h
 Predict.cpp
 -----------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Predict/Predict.cpp
+.. literalinclude:: ../../../../../src/Examples/Predict/Predict.cpp
 	:language: cpp
 	:linenos:
 
@@ -34,7 +34,7 @@ Predict.cpp
 PredictData.h
 -------------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Predict/PredictData.h
+.. literalinclude:: ../../../../../src/Examples/Predict/PredictData.h
 	:language: cpp
 	:linenos:
 
@@ -43,7 +43,7 @@ PredictData.h
 BuildFeatures.h
 ---------------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Predict/BuildFeatures.h
+.. literalinclude:: ../../../../../src/Examples/Predict/BuildFeatures.h
 	:language: cpp
 	:linenos:
 
@@ -52,6 +52,6 @@ BuildFeatures.h
 BuildFeatures.cpp
 -----------------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Predict/BuildFeatures.cpp
+.. literalinclude:: ../../../../../src/Examples/Predict/BuildFeatures.cpp
 	:language: cpp
 	:linenos:

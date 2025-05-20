@@ -7,7 +7,7 @@ Classify Example Source Files
 Main.cpp
 --------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Classify/Main.cpp
+.. literalinclude:: ../../../../../src/Examples/Classify/Main.cpp
 	:language: cpp
 	:linenos:
 
@@ -16,7 +16,7 @@ Main.cpp
 AssignHeadings.h
 ----------------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Classify/AssignHeadings.h
+.. literalinclude:: ../../../../../src/Examples/Classify/AssignHeadings.h
 	:language: cpp
 	:linenos:
 
@@ -25,7 +25,7 @@ AssignHeadings.h
 Mapping.h
 ---------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Classify/Mapping.h
+.. literalinclude:: ../../../../../src/Examples/Classify/Mapping.h
 	:language: cpp
 	:linenos:
 
@@ -34,7 +34,7 @@ Mapping.h
 Mapping.cpp
 -----------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Classify/Mapping.cpp
+.. literalinclude:: ../../../../../src/Examples/Classify/Mapping.cpp
 	:language: cpp
 	:linenos:
 
@@ -43,6 +43,6 @@ Mapping.cpp
 TrackFilter.h
 -------------
 
-.. literalinclude:: ../../../../../tracktable/Examples/Classify/TrackFilter.h
+.. literalinclude:: ../../../../../src/Examples/Classify/TrackFilter.h
 	:language: cpp
 	:linenos:
