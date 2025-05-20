@@ -2,7 +2,7 @@
 *.pyc
 *.pyd
 *.so
-Documentation/readthedocs_build/doxygen
+Documentation/readthedocs/doxygen
 Documentation/examples/tmp_my_tracks.html
 Documentation/examples/tmp_my_tracks.png
 Documentation/examples/trajs*
