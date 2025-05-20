@@ -17,9 +17,24 @@ from __future__ import print_function
 import subprocess
 import sys
 import os
+import os.path
 import re
 
-tracktable_src = '../../../'
+tracktable_src = '../../../src/Python'
+
+version_txt_location = os.path.normpath(os.path.join(
+    tracktable_src, "..", "..", "..", "..", "version.txt"
+))
+
+if not os.path.exists(os.path.join(tracktable_src, "..", "..", "version.txt")):
+    where_we_looked = os.path.abspath(os.path.normpath(version_txt_location))
+    raise FileNotFoundError((
+        f"Documentation/conf.py: tracktable_src is probably wrong.  Couldn't find "
+        f"version.txt in {where_we_looked}.  We set tracktable_src to "
+        f"{tracktable_src} (absolutely: {os.path.abspath(os.path.normpath(tracktable_src))})."
+    ))
+
+
 tracktable_build = None
 tracktable_version = re.search(r"^TRACKTABLE VERSION ([0-9\.]*)", open(os.path.join(os.path.dirname(__file__), "..", "..","..", "version.txt"), "rt").read(), re.M).group(1)
 
