@@ -85,6 +85,15 @@ Tutorials
       tut2 -> tut6;
    }
 
+
+.. note::
+
+   There is a bug in our Sphinx build.  The notebooks should appear
+   under this note.  You can download the pre-rendered notebooks from
+   our `Releases page on GitHub <https://github.com/sandialabs/tracktable/releases>`__
+   starting with Tracktable 1.7.2.
+
+
 .. toctree::
    :maxdepth: 1
 
