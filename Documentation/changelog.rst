@@ -16,8 +16,7 @@ release 1.8.0 later in summer 2025.
 New Features
 ------------
 
-- Folium proxy.  We use
-  `Folium <https://python-visualization.github.io/folium/latest/>`_
+- Folium proxy.  We use `Folium <https://python-visualization.github.io/folium/latest/>`__
   for rendering
   interactive maps in Jupyter notebooks and Web applications.  Folium generates
   HTML that requires Javascript resources out on the open Internet.  This is
@@ -60,9 +59,17 @@ Other Changes
 - Cleanup: We now declare C++ tests with a macro instead of multiple lines of boilerplate.
 - Cleanup: Several warnings about deprecated C++ iterator usage squashed.
 - Cleanup: We have removed extra copies of the demo notebooks that had uninformative names.
+- Cleanup: Documentation now uses a single Doxygen configuration file and a single Sphinx configuration file whether you're building manually, building on Read the Docs, or building under CMake.
 - We now require a C++20 or newer compiler to build Tracktable.
 - We now use the ``libboost-*`` packages from conda-forge instead of ``boost-*``. The names changed after Boost 1.82 or so.
 - License specification for Python wheels has changed to use SPDF expressions. We have changed our wheel-building configuration to use this.  Note: Tracktable's license has not changed at all -- just the way we encode that license in the metadata for the wheel file.
+- Reorganization of the source repository.  All source code is under ``src/`` and obsolete files in ``Documentation/`` have been removed.  We'll continue to clean up the organization in future releases.
+
+
+Known Bugs
+----------
+
+- Jupyter notebooks are not rendering in our Read the Docs site.  We're posting them on our `Releases page <https://github.com/sandialabs/tracktable/releases>`_ for download.
 
 
 Coming Soon
@@ -525,8 +532,8 @@ This method is unneeded in C++: ``new_trajectory = original_trajectory`` will su
 We have updated the ``insert()`` method for trajectories in Python to allow multiple points to be inserted with one function call.
 Similarly, slicing a trajectory (like any other list) will now return a new trajectory that inherits its parent's metadata.
 
-Interactive trajectory rendering is available in ``tracktable.render.render_trajectories.render_trajectories()``.  This will use `Folium <https://python-visualization.github.io/folium/>`_
-if you are inside a Jupyter notebook and `Cartopy <https://scitools.org.uk/cartopy/docs/latest/>`_ otherwise.  We intend to clean up the API for trajectory rendering for 1.5.0.
+Interactive trajectory rendering is available in ``tracktable.render.render_trajectories.render_trajectories()``.  This will use `Folium <https://python-visualization.github.io/folium/latest/>`__
+if you are inside a Jupyter notebook and `Cartopy <https://scitools.org.uk/cartopy/docs/latest/>`__ otherwise.  We intend to clean up the API for trajectory rendering for 1.5.0.
 
 Alert readers will notice some infrastructure for test data generators.  These are still work in progress and are slated for release in 1.5.0.
 
@@ -1162,3 +1169,4 @@ NEW FEATURES
 * Python script added for movie making on geographic maps.
 * Python script added for still images on geographic maps.
 * Python scripts for all rendering methods added to examples directory.
+

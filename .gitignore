@@ -16,6 +16,7 @@ __pycache__
 /.vscode/
 /_build/
 /doxygen/
+Documentation/doxygen_xml
 /build_ubuntu2004/
 /build_macos/
 Documentation/examples/demo_images/
