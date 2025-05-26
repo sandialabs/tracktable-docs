@@ -187,7 +187,7 @@ Fuller documentation is coming soon. This should be enough to get you started:
 
 .. code-block:: console
 
-   $ cd tracktable/Python/tracktable/examples
+   $ cd src/Python/tracktable/examples
    $ python heatmap_from_csv.py --write-response-file > heatmap_response_file.txt
 
 Now open up ``heatmap_response_file.txt`` in your favorite editor.

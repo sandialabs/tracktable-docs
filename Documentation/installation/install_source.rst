@@ -538,6 +538,9 @@ We're afraid you're on your own if this happens.
 Step 4: Install
 ---------------
 
+TODO: This section is outdated.  We can build and install wheels now
+and can probably also use ``pip install -e``.
+
 You can use Tracktable as-is from its build directory or install it
 elsewhere on your system. To install it, type ``make install`` in the
 build directory (or, again, your IDE's equivalent). You can choose
@@ -548,7 +551,7 @@ You will also need to add Tracktable to your system's Python search
 path, usually stored in an environment variable named ``PYTHONPATH``.
 
 * If you  are going  to run  Tracktable from  the directory  where you
-  unpacked it  then add  the directory  ``TRACKTABLE_HOME/tracktable/Python/`` to
+  unpacked it  then add  the directory  ``TRACKTABLE_HOME/src/Python/`` to
   your ``PYTHONPATH``.
 * If you installed Tracktable via ``make install`` then you will need
   to add ``INSTALL_DIR/Python/`` to your ``PYTHONPATH``. Here

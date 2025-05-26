@@ -9,7 +9,7 @@ its various capabilities, Python and C++ alike, and sample data to experiment wi
 C++ examples are in the source code distribution in the directory
 ``tracktable/Examples``. Python examples, tutorials and demos are available,
 from the Pip package, Anaconda package and source code distribution in the
-directory ``tracktable/Python/tracktable/examples``, as standalone Python scripts
+directory ``src/Python/tracktable/examples``, as standalone Python scripts
 and Jupyter_ notebooks.
 
 .. _cpp_examples:
