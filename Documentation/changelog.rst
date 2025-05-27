@@ -33,8 +33,20 @@ New Features
   cause trajectory animations to loop indefinitely instead of play once and then
   stop.
 
+- Linux wheel-building scripts in ``packaging/pypi/linux`` can now use a PyPI
+  mirror instead of always pulling packages from ``pypi.org``.  See
+  ``packaging/pypi/linux//build_all.sh`` for documentation on how to set
+  parameters.
+
+- Linux wheel-building now makes it easier to specify which Python versions
+  to use when building wheels.
+
 Bugs Fixed
 ----------
+
+-
+- Colormaps were being registered with ``matplotlib.cm.register_cmap``, a
+  deprecated interface.  We now go through ``matplotlib.colors``.
 
 - Regression in Folium heat maps: Passing a color map to ``render_heatmap()`` when
   rendering with Folium would lead to an error caused by trying to call ``split()``
@@ -51,10 +63,15 @@ Bugs Fixed
   compiled.  Previously, trying to build documentation on a just-checked-out
   source tree would often error out because these modules were not in place yet.
 
+- We now install Git LFS in our Read the Docs build so that we can download
+  the pre-rendered tutorial and demo notebooks.
+
+- It is now possible to import ``tracktable.render.render_movies`` whether or not you have FFMPEG installed.  This is necessary for documentation.  If you try to actually render a movie without FFMPEG you will get a RuntimeError.
 
 Other Changes
 -------------
 
+- Cleanup: Source code has been moved from ``$root/tracktable`` to ``$root/src/{C++,Python}``.
 - Cleanup: Several configure- and build-time warnings about CMake Boost macros have been resolved.
 - Cleanup: We now declare C++ tests with a macro instead of multiple lines of boilerplate.
 - Cleanup: Several warnings about deprecated C++ iterator usage squashed.
