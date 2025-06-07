@@ -128,7 +128,7 @@ def print_environment():
     print("*** Location of conf.py: {}".format(here()))
 
     print("*** Environment variables:")
-    pprint.pprint(dict(*os.environ))
+    pprint.pprint(dict(os.environ))
 
     print("Listing of tutorial notebook directory:")
     notebook_path = os.path.normpath(os.path.join(here(), "..", "tutorial_notebooks"))
