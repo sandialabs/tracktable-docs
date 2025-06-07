@@ -314,8 +314,8 @@ if CMAKE_BUILD:
 ### -----------------------------------------------------------------------
 
 if READTHEDOCS_BUILD:
-    print("*** Detected Read the Docs build.  Printing environment.")
-    print_environment()
+    print("*** Detected Read the Docs build.")
+    #print_environment()
 
     xml_output_path = os.path.join(os.getcwd(), "doxygen_xml")
 
