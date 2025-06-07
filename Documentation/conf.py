@@ -34,6 +34,7 @@ import subprocess
 import sys
 import os
 import os.path
+import pprint
 import re
 
 if 'READTHEDOCS' in os.environ:
@@ -117,6 +118,24 @@ def major_minor_versions_only(full_version: str) -> str:
 
     components = full_version.split('.')
     return f"{components[0]}.{components[1]}"
+
+
+def print_environment():
+    """Print debug information about the environment
+    """
+
+    print("*** Current directory: {}".format(os.getcwd()))
+    print("*** Location of conf.py: {}".format(here()))
+
+    print("*** Environment variables:")
+    pprint.pprint(os.environ)
+
+    print("Listing of tutorial notebook directory:")
+    notebook_path = os.path.normpath(os.path.join(here(), "..", "tutorial_notebooks"))
+    subprocess.run(
+        ["/bin/ls", "-l",  notebook_path]
+    )
+
 
 ### -----------------------------------------------------------------------
 ###
@@ -293,6 +312,9 @@ if CMAKE_BUILD:
 ### -----------------------------------------------------------------------
 
 if READTHEDOCS_BUILD:
+    print("*** Detected Read the Docs build.  Printing environment.")
+    print_environment()
+
     xml_output_path = os.path.join(os.getcwd(), "doxygen_xml")
 
     doxygen_environment = os.environ.copy()
