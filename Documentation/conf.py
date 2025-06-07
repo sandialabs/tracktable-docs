@@ -128,14 +128,16 @@ def print_environment():
     print("*** Location of conf.py: {}".format(here()))
 
     print("*** Environment variables:")
-    pprint.pprint(os.environ)
+    pprint.pprint(dict(*os.environ))
 
     print("Listing of tutorial notebook directory:")
     notebook_path = os.path.normpath(os.path.join(here(), "..", "tutorial_notebooks"))
-    subprocess.run(
-        ["/bin/ls", "-l",  notebook_path]
-    )
 
+    ls_output = subprocess.run(
+        ["/bin/ls", "-l",  notebook_path],
+        capture_output=True
+    )
+    print(ls_output.stdout.decode("utf-8"))
 
 ### -----------------------------------------------------------------------
 ###
