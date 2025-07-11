@@ -4,6 +4,8 @@
 Changelog
 =========
 
+VERSION 1.7.3, 15 July 2025
+===========================
 
 
 VERSION 1.7.2, 15 May 2025
@@ -12,6 +14,27 @@ VERSION 1.7.2, 15 May 2025
 This is a patch release mainly intended to fix some regressions in the
 documentation with only a couple of minor new features.  We expect to
 release 1.8.0 later in summer 2025.
+
+Things Cleaned Up
+-----------------
+
+- We've updated the ground truth for the trajectory rendering tests
+  (both static and interactive), so those tests should pass again...
+  until Cartopy and Folium release new versions.  Thanks to Diana He
+  for this contribution!
+
+- We've fixed an import statement that we overlooked in the Folium back
+  end.  It uses `folium_proxy` now and should pick up `offlinefolium`
+  like everything else.
+
+- All source code is now under the `src/` directory.
+
+- Tutorial and demo notebooks now show up in our documentation on
+  Read the Docs.  The culprit: Git LFS is not installed in the
+  build environment by default.
+
+- Lots of miscellaneous cleanup related to moving things around.  See
+  CHANGELOG.md for more information and ask us for details.
 
 New Features
 ------------
