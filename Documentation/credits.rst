@@ -24,7 +24,7 @@ Albuquerque, New Mexico:
 We gratefully acknowledge contributions from our collaborators:
 
 * Paul Schrum
-
+* Diana He
 
 Sandia Corporation is a multi-program laboratory managed and operated
 by National Technology and Engineering Solutions of Sandia, LLC, for
